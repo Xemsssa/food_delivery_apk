@@ -12,7 +12,8 @@ class _PageBodyState extends State<PageBody> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 220,
+      height: 320,
+      // width: 200,
       child: PageView.builder(
           itemCount: 5,
           itemBuilder: (context, index) {
@@ -21,21 +22,95 @@ class _PageBodyState extends State<PageBody> {
      );
   }
   Widget _buildPageItems(int index){
-    return Container(
-      height: 220,
-      width: 200,
-      margin: const EdgeInsets.only(left: 5,right: 5),
-      decoration: BoxDecoration(
-          color: index.isEven ? Styles.yellowColor: Styles.mainColor,
-        borderRadius: BorderRadius.circular(40),
-          image: const DecorationImage(
-              fit: BoxFit.cover,
-            image: AssetImage(
-              'assets/images/food_image1.jpeg',
+    final size = MediaQuery.of(context).size;
 
-            )
-          )
-      ),
+    return Stack(
+      children: [
+        Container(
+          // height: 320,
+          // width: 200,
+          margin: const EdgeInsets.only(left: 5,right: 5),
+          decoration: BoxDecoration(
+              color: index.isEven ? Styles.yellowColor: Styles.mainColor,
+              borderRadius: BorderRadius.circular(40),
+              image: const DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    'assets/images/food_image1.jpeg',
+
+                  )
+              )
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            height: 130,
+            width: size.width * 0.75,
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Styles.whiteColor,
+            ),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Chinese Side"),
+                SizedBox(height: 10,),
+                Row(
+                  children: [
+                    Row(
+                      child: Icon(Icons.star,
+                        color: Styles.mainColor,
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+                    Text("4.5", style: TextStyle(
+                      color: Styles.textColor
+                    )),
+                    SizedBox(width: 10,),
+                    Text("1287 comments", style:  TextStyle(
+                        color: Styles.textColor
+                    )),
+                  ]
+                ),
+                SizedBox(height: 10,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.ac_unit_sharp,
+                         color: Styles.yellowColor,),
+                        SizedBox(width: 4,)
+                        // ,Text('Normal', style: Styles.headlineStyle,),
+                        ,Text('Normal', style: TextStyle(
+                          color: Styles.textColor
+                        )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.location_on,
+                        color: Styles.mainColor,),SizedBox(width: 4,),Text('1.7km', style: TextStyle(
+                            color: Styles.textColor
+                        )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.watch_later_outlined, color: Styles.redColor,),SizedBox(width: 4,),Text('32min', style: TextStyle(
+                            color: Styles.textColor
+                        )),
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+        )
+      ],
     );
   }
 }

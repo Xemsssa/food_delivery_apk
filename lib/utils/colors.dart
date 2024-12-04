@@ -12,6 +12,8 @@ class Styles{
   static const Color titleColor = Color(0xffc524f);
   static const Color mainBlackColor = Color(0xff332d2);
   static const Color yellowColor = Color(0xffffd379);
+  static const Color redColor = Color(0xffe34545);
+  static const Color whiteColor = Color(0xffffffff);
 
   static TextStyle headlineStyle =  TextStyle(fontSize: 26, color: textColor, fontWeight: FontWeight.bold );
   static TextStyle headlineStyle2 =  TextStyle(fontSize: 21, color: textColor, fontWeight: FontWeight.bold );

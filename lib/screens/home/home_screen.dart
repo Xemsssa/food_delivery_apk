@@ -4,6 +4,8 @@ import '../Widgets/heading_text.dart';
 import '../Widgets/page_body.dart';
 import '../Widgets/search_button.dart';
 
+import 'package:food_delivery_apk/utils/colors.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,6 +13,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: Styles.buttonBackgroundColor,
       body: ListView(
         children: const [
           // Text('homeScreen'),
