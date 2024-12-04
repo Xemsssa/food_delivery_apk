@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(20),
             child: PageBody(),
-          )
+          ),
         ],
       ),
     );

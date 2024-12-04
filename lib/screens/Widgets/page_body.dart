@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_apk/screens/Widgets/users_reviews.dart';
 import 'package:food_delivery_apk/utils/colors.dart';
+
+import 'delivery_parameters.dart';
 
 class PageBody extends StatefulWidget {
   const PageBody({super.key});
@@ -27,7 +30,7 @@ class _PageBodyState extends State<PageBody> {
     return Stack(
       children: [
         Container(
-          // height: 320,
+          height: 240,
           // width: 200,
           margin: const EdgeInsets.only(left: 5,right: 5),
           decoration: BoxDecoration(
@@ -37,7 +40,6 @@ class _PageBodyState extends State<PageBody> {
                   fit: BoxFit.cover,
                   image: AssetImage(
                     'assets/images/food_image1.jpeg',
-
                   )
               )
           ),
@@ -45,6 +47,7 @@ class _PageBodyState extends State<PageBody> {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
+            margin: EdgeInsets.only(bottom: 10),
             height: 130,
             width: size.width * 0.75,
             padding: EdgeInsets.all(20),
@@ -57,55 +60,9 @@ class _PageBodyState extends State<PageBody> {
               children: [
                 Text("Chinese Side"),
                 SizedBox(height: 10,),
-                Row(
-                  children: [
-                    Row(
-                      child: Icon(Icons.star,
-                        color: Styles.mainColor,
-                      ),
-                    ),
-                    SizedBox(width: 10,),
-                    Text("4.5", style: TextStyle(
-                      color: Styles.textColor
-                    )),
-                    SizedBox(width: 10,),
-                    Text("1287 comments", style:  TextStyle(
-                        color: Styles.textColor
-                    )),
-                  ]
-                ),
+                UsersReviews(),
                 SizedBox(height: 10,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(Icons.ac_unit_sharp,
-                         color: Styles.yellowColor,),
-                        SizedBox(width: 4,)
-                        // ,Text('Normal', style: Styles.headlineStyle,),
-                        ,Text('Normal', style: TextStyle(
-                          color: Styles.textColor
-                        )),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.location_on,
-                        color: Styles.mainColor,),SizedBox(width: 4,),Text('1.7km', style: TextStyle(
-                            color: Styles.textColor
-                        )),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.watch_later_outlined, color: Styles.redColor,),SizedBox(width: 4,),Text('32min', style: TextStyle(
-                            color: Styles.textColor
-                        )),
-                      ],
-                    )
-                  ],
-                )
+                DeliveryPrameters()
               ],
             ),
           ),
