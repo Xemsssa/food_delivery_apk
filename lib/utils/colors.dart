@@ -1,4 +1,6 @@
 import 'dart:ui';
+import 'package:flutter/material.dart';
+
 
 class Styles{
   static const Color textColor = Color(0xffccc7c5);
@@ -15,9 +17,9 @@ class Styles{
   static const Color redColor = Color(0xffe34545);
   static const Color whiteColor = Color(0xffffffff);
 
-  static TextStyle headlineStyle =  TextStyle(fontSize: 26, color: textColor, fontWeight: FontWeight.bold );
-  static TextStyle headlineStyle2 =  TextStyle(fontSize: 21, color: textColor, fontWeight: FontWeight.bold );
-  // static TextStyle headlineStyle3 =  TextStyle(fontSize: 17, color: Colors.grey.shade500, fontWeight: FontWeight.w500 );
-  // static TextStyle headlineStyle4  =  TextStyle(fontSize: 14,  color: Colors.grey.shade500, fontWeight: FontWeight.w500 );
+  static TextStyle headlineStyle =  const TextStyle(fontSize: 26, color: mainColor, fontWeight: FontWeight.bold );
+  static TextStyle headlineStyle2 =  const TextStyle(fontSize: 21, color: mainColor, fontWeight: FontWeight.bold );
+  static TextStyle headlineStyle3 =  TextStyle(fontSize: 17, color: textColor,);
+  static TextStyle headlineStyle4  =  TextStyle(fontSize: 14,  color: textColor,);
 
 }

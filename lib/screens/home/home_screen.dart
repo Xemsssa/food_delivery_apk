@@ -44,6 +44,20 @@ class HomeScreen extends StatelessWidget {
             padding: EdgeInsets.all(20),
             child: PageBody(),
           ),
+          
+          Padding(padding:EdgeInsets.all(20),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text("Popular", style: TextStyle(
+                  fontSize: 24
+                ) ),
+                Text("Food pairing", style: TextStyle(
+                  color: Styles.mainColor
+                ),)
+              ]
+            ),
+          )
         ],
       ),
     );
