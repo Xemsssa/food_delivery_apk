@@ -2,7 +2,9 @@
 
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery_apk/screens/Widgets/product_detail.dart';
 import 'package:food_delivery_apk/screens/Widgets/users_reviews.dart';
+import 'package:food_delivery_apk/screens/home/food_detail_page.dart';
 import 'package:food_delivery_apk/utils/colors.dart';
 
 import 'delivery_parameters.dart';
@@ -56,47 +58,43 @@ class _PageBodyState extends State<PageBody> {
 
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: Stack(
-        children: [
-          Container(
-            height: 250,
-            // width: 200,
-            margin: const EdgeInsets.only(left: 5,right: 5),
-            decoration: BoxDecoration(
-                color: index.isEven ? Styles.yellowColor: Styles.mainColor,
-                borderRadius: BorderRadius.circular(40),
-                image: const DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(
-                      'assets/images/food_image1.jpeg',
-                    )
-                )
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              margin: const EdgeInsets.only(bottom: 0),
-              height: 130,
-              width: size.width * 0.75,
-              padding: const EdgeInsets.all(20),
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(context, FoodDetailPage() as Route<Object?>);
+        },
+        child: Stack(
+          children: [
+            Container(
+              height: 250,
+              // width: 200,
+              margin: const EdgeInsets.only(left: 5,right: 5),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Styles.whiteColor,
-              ),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Chinese Side"),
-                  SizedBox(height: 10,),
-                  UsersReviews(),
-                  SizedBox(height: 10,),
-                  DeliveryPrameters()
-                ],
+                  color: index.isEven ? Styles.yellowColor: Styles.mainColor,
+                  borderRadius: BorderRadius.circular(40),
+                  image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                        'assets/images/food_image1.jpeg',
+                      )
+                  )
               ),
             ),
-          ),
-        ],
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                margin: const EdgeInsets.only(bottom: 0),
+                height: 130,
+                width: size.width * 0.75,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Styles.whiteColor,
+                ),
+                child: ProductDetail(),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
