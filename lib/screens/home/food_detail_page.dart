@@ -37,7 +37,11 @@ class FoodDetailPage extends StatelessWidget {
                 right: 20,
                 child: Row(
                   children: [
-                    AppIcon(icon: Icons.arrow_back),
+                    GestureDetector(
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                        child: AppIcon(icon: Icons.arrow_back)),
                     Spacer(),
                     AppIcon(icon: Icons.shopping_cart)
                   ],

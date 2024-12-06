@@ -19,12 +19,11 @@ class _ExpandedTextWidgetState extends State<ExpandedTextWidget> {
   Widget build(BuildContext context) {
     // String text;
     var textWidget = Text(widget.text,
-      maxLines: isExpanded? 5: null,
+      maxLines: isExpanded? null: 10,
       overflow: isExpanded ? TextOverflow.visible: TextOverflow.ellipsis,
     );
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start
-      ,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         textWidget,
         GestureDetector(
@@ -32,7 +31,7 @@ class _ExpandedTextWidgetState extends State<ExpandedTextWidget> {
             // print("tap");
             changeVisibility();
           },
-          child: Text(isExpanded ? 'Show less': 'Shoe more' ),
+          child: Text(isExpanded ? 'Show less': 'Shows more' ),
         )
       ],
     );

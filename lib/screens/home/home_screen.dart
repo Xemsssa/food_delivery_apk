@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food_delivery_apk/screens/Widgets/delivery_parameters.dart';
 
+import '../../utils/AppRoutes.dart';
 import '../Widgets/heading_text.dart';
 import '../Widgets/page_body.dart';
 import '../Widgets/search_button.dart';
@@ -67,45 +68,50 @@ class HomeScreen extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 10,
                 itemBuilder: (context, index){
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 150,
-                          width: 150,
-                          // child: Text('data'),
-                          decoration: BoxDecoration(
-                            color: Styles.yellowColor,
-                            borderRadius: BorderRadius.circular(20),
-                            // image: DecorationImage(
-                            //     image: AssetImage('assets/images/img.jpeg')
-                            // ),
+                  return GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, Approutes.recommendedFoodDetailPage);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 150,
+                            width: 150,
+                            // child: Text('data'),
+                            decoration: BoxDecoration(
+                              color: Styles.yellowColor,
+                              borderRadius: BorderRadius.circular(20),
+                              // image: DecorationImage(
+                              //     image: AssetImage('assets/images/img.jpeg')
+                              // ),
+                            ),
                           ),
-                        ),
-                        Container(
-                          width: size.width * 0.57,
-                          padding: const EdgeInsets.all(8),
-                          decoration: const BoxDecoration(
-                              color: Styles.whiteColor,
-                            borderRadius: BorderRadius.only(topRight: Radius.circular(20),
-                            bottomRight: Radius.circular(20))
+                          Container(
+                            width: size.width * 0.57,
+                            padding: const EdgeInsets.all(8),
+                            decoration: const BoxDecoration(
+                                color: Styles.whiteColor,
+                              borderRadius: BorderRadius.only(topRight: Radius.circular(20),
+                              bottomRight: Radius.circular(20))
+                            ),
+                            child: const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Nutritious fruit meal', style: TextStyle(
+                                )),
+                                SizedBox(height: 10,),
+                                Text('With chinese characteristics', style: TextStyle(
+                                    color: Styles.textColor
+                                ),),
+                                SizedBox(height: 10,),
+                                DeliveryPrameters()
+                              ],
+                            ),
                           ),
-                          child: const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Nutritious fruit meal', style: TextStyle(
-                              )),
-                              SizedBox(height: 10,),
-                              Text('With chinese characteristics', style: TextStyle(
-                                  color: Styles.textColor
-                              ),),
-                              SizedBox(height: 10,),
-                              DeliveryPrameters()
-                            ],
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_apk/screens/Widgets/product_detail.dart';
 import 'package:food_delivery_apk/screens/Widgets/users_reviews.dart';
 import 'package:food_delivery_apk/screens/home/food_detail_page.dart';
+import 'package:food_delivery_apk/utils/AppRoutes.dart';
 import 'package:food_delivery_apk/utils/colors.dart';
 
 import 'delivery_parameters.dart';
@@ -60,7 +61,9 @@ class _PageBodyState extends State<PageBody> {
       padding: const EdgeInsets.all(20.0),
       child: GestureDetector(
         onTap: (){
-          Navigator.push(context, FoodDetailPage() as Route<Object?>);
+          // Navigator.push(context, FoodDetailPage() as Route<Object?>);
+          // Navigator.push(context, Approutes.foodDetailPage);
+          Navigator.pushNamed(context, Approutes.foodDetailPage);
         },
         child: Stack(
           children: [

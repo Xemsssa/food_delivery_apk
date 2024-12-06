@@ -4,8 +4,8 @@ import 'package:food_delivery_apk/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 
-class RecomendedFoodDetail extends StatelessWidget {
-  const RecomendedFoodDetail({super.key});
+class RecommendedFoodDetail extends StatelessWidget {
+  const RecommendedFoodDetail({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +13,15 @@ class RecomendedFoodDetail extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            centerTitle: true,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AppIcon(icon: Icons.arrow_back,),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: AppIcon(icon: Icons.arrow_back,)),
                 // Spacer(),
                 AppIcon(icon: Icons.shopping_cart,)
                 // Icon()
@@ -55,6 +60,72 @@ class RecomendedFoodDetail extends StatelessWidget {
 
         ],
       ),
+        bottomNavigationBar: Column(
+          mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                        child: AppIcon(
+                          size: 16,
+                          icon: Icons.remove,
+                          iconColor: Styles.whiteColor,
+                          backgroundColor: Styles.mainColor,
+                        )
+                    ),
+                    Text('\$12.88 X 0', style: TextStyle(
+                      fontSize: 24
+                    ),),
+                    Container(
+                      child: AppIcon(icon: Icons.add,
+                        iconColor: Styles.whiteColor,
+                        backgroundColor: Styles.mainColor,)
+                    )
+                  ],
+                ),
+              ),
+
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: const BoxDecoration(
+                    color: Styles.textColor,
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20))
+
+                ),
+                // height: 120,
+                child:
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Styles.whiteColor
+                      ),
+                      child: AppIcon(icon: Icons.favorite,iconColor: Styles.mainColor,)
+                    ),
+                    Container(
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Styles.mainColor
+                        ),
+                        child: const Text("\$0.08 Add to cart", style: TextStyle(
+                            color: Styles.whiteColor,
+                            fontSize: 20
+                        ))
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+
     );
   }
 }
