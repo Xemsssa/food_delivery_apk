@@ -4,6 +4,7 @@ import 'package:food_delivery_apk/controllers/popular_product_controller.dart';
 import 'package:food_delivery_apk/screens/bottom_bar.dart';
 import 'package:food_delivery_apk/screens/home/food_detail_page.dart';
 import 'package:food_delivery_apk/screens/home/home_screen.dart';
+import 'package:food_delivery_apk/screens/home/main_screen_page.dart';
 import 'package:food_delivery_apk/screens/home/recommended_food_detail.dart';
 import 'package:food_delivery_apk/utils/AppRoutes.dart';
 
@@ -26,9 +27,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Delivery App',
       // home: const BottomBar(),
-      home: const HomeScreen(),
+      // home: const HomeScreen(),
       // home: FoodDetailPage(),
       // home: RecomendedFoodDetail(),
+      home: MainScreenPage(),
+
       routes: {
         // '/food_detail_page': (context) => const FoodDetailPage(),
         Approutes.foodDetailPage: (context) => FoodDetailPage(),
