@@ -29,12 +29,13 @@ class _MainScreenPageState extends State<MainScreenPage> {
         unselectedItemColor: Styles.yellowColor,
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        currentIndex: selectedIndex,
         onTap: onChange,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
-          BottomNavigationBarItem(icon: Icon(Icons.history), label: "home"),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "home"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "home"),
+          BottomNavigationBarItem(icon: Icon(Icons.history), label: "history"),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "cart"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "person"),
         ],
       ),
     );
