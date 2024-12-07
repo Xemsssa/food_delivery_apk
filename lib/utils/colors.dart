@@ -19,9 +19,11 @@ class Styles{
   static const Color backgroundColor = Color(0xfffcf4e4);
   static const Color iconColor = Color(0xff756d54);
 
-  static TextStyle headlineStyle =  const TextStyle(fontSize: 26, color: mainColor, fontWeight: FontWeight.bold );
-  static TextStyle headlineStyle2 =  const TextStyle(fontSize: 21, color: mainColor, fontWeight: FontWeight.bold );
-  static TextStyle headlineStyle3 =  TextStyle(fontSize: 17, color: textColor,);
-  static TextStyle headlineStyle4  =  TextStyle(fontSize: 14,  color: textColor,);
+  static TextStyle headlineStyle =  const TextStyle(fontSize: 26, color: textColor, fontWeight: FontWeight.bold );
+  static TextStyle headlineStyle2 =  const TextStyle(fontSize: 22, color: textColor, fontWeight: FontWeight.bold );
+  static TextStyle headlineStyle3 =  TextStyle(fontSize: 21, color: textColor,);
+  static TextStyle headlineStyle4 =  TextStyle(fontSize: 17, color: textColor,);
+  static TextStyle headlineStyle5 =  TextStyle(fontSize: 17, color: textColor,);
+  static TextStyle headlineStyle6  =  TextStyle(fontSize: 14,  color: textColor,);
 
 }
