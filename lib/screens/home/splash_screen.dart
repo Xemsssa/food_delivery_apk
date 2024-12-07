@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   void initState() {
    super.initState();
    animationController = AnimationController(vsync: this, duration: const Duration(seconds: 2))..forward() ;
-   // animationController = animationController.forward();
+   // animationController = ani mationController.forward();
    animation = CurvedAnimation(parent: animationController, curve: Curves.linear);
 
    Timer(
