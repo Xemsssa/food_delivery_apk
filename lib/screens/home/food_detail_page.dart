@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 // import 'package:food_delivery_apk/screens/Widgets/app_icon.dart';
 import 'package:food_delivery_apk/utils/colors.dart';
 
+import '../../utils/AppRoutes.dart';
 import '../Widgets/App_icon.dart';
 import '../Widgets/expanded_text_widget.dart';
 import '../Widgets/product_detail.dart';
+import '../components/bottom_nav_bar_botton.dart';
+import '../components/count_item.dart';
 
 class FoodDetailPage extends StatelessWidget {
   const FoodDetailPage({super.key});
@@ -43,7 +46,11 @@ class FoodDetailPage extends StatelessWidget {
                         },
                         child: AppIcon(icon: Icons.arrow_back)),
                     Spacer(),
-                    AppIcon(icon: Icons.shopping_cart)
+                    GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, Approutes.shoppingCart);
+                        },
+                        child: AppIcon(icon: Icons.shopping_cart))
                   ],
                 )
             ),
@@ -103,36 +110,10 @@ class FoodDetailPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     color: Styles.whiteColor
                   ),
-                  child: const Row(
-                    children: [
-                      Text('-', style: TextStyle(
-                        color: Styles.textColor,
-                        fontSize: 24
-                      )),
-                      SizedBox(width: 10,),
-                      Text("0",style: TextStyle(
-                          fontSize: 24
-                      )),
-                      SizedBox(width: 10,),
-                      Text('+', style: TextStyle(
-                        color: Styles.textColor,
-                          fontSize: 24
-                      )),
-                    ],
-                  ),
+                  child: CountItem(),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Styles.mainColor
-                  ),
-                  child: const Text("\$0.08 Add to cart", style: TextStyle(
-                    color: Styles.whiteColor,
-                    fontSize: 20
-                  )
-                  ))
 
+                bottomNavBarButton(text: "\$0.08 Add to cart",)
               ],
             ),
 

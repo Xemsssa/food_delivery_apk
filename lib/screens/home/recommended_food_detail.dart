@@ -23,7 +23,11 @@ class RecommendedFoodDetail extends StatelessWidget {
                     },
                     child: AppIcon(icon: Icons.arrow_back,)),
                 // Spacer(),
-                AppIcon(icon: Icons.shopping_cart,)
+                GestureDetector(
+                    onTap: () {
+
+                    },
+                    child: AppIcon(icon: Icons.shopping_cart,))
                 // Icon()
               ],
             ),

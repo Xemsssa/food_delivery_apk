@@ -10,18 +10,20 @@ class AppIcon extends StatelessWidget {
     required this.icon,
     this.backgroundColor = Styles.backgroundColor,
     this.iconColor = Styles.iconColor,
-    this.size = 40
+    this.size = 25
   });
 
 //
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+      // shape: BoxShape.circle,
+        borderRadius: BorderRadius.circular(100),
         color: backgroundColor,
       ),
-      child:  Icon(icon, size: 40,color: iconColor),
+      child:  Icon(icon, size: size,color: iconColor),
     );
   }
 }

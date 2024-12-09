@@ -6,6 +6,8 @@ import 'package:food_delivery_apk/screens/home/food_detail_page.dart';
 import 'package:food_delivery_apk/screens/home/home_screen.dart';
 import 'package:food_delivery_apk/screens/home/main_screen_page.dart';
 import 'package:food_delivery_apk/screens/home/recommended_food_detail.dart';
+import 'package:food_delivery_apk/screens/home/shopping_cart.dart';
+import 'package:food_delivery_apk/screens/home/sign_up.dart';
 import 'package:food_delivery_apk/screens/home/splash_screen.dart';
 import 'package:food_delivery_apk/utils/AppRoutes.dart';
 
@@ -31,14 +33,16 @@ class MyApp extends StatelessWidget {
       // home: const HomeScreen(),
       // home: FoodDetailPage(),
       // home: RecomendedFoodDetail(),
-      // home: MainScreenPage(),
-      home: SplashScreen(),
+      home: MainScreenPage(),
+      // home: SplashScreen(),
+      // home: SignUpPage(),
 
       routes: {
         // '/food_detail_page': (context) => const FoodDetailPage(),
         Approutes.foodDetailPage: (context) => FoodDetailPage(),
         Approutes.recommendedFoodDetailPage: (context) => const RecommendedFoodDetail(),
         Approutes.mainScreenPage: (context) => const MainScreenPage(),
+        Approutes.shoppingCart: (context) => const ShoppingCart(),
       },
     );
   }

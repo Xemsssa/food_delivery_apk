@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_apk/screens/home/cart_history.dart';
 import 'package:food_delivery_apk/screens/home/food_detail_page.dart';
 import 'package:food_delivery_apk/screens/home/home_screen.dart';
+import 'package:food_delivery_apk/screens/home/profile_screen.dart';
 import 'package:food_delivery_apk/screens/home/recommended_food_detail.dart';
+import 'package:food_delivery_apk/screens/home/shopping_cart.dart';
+import 'package:food_delivery_apk/screens/home/sign_in.dart';
+import 'package:food_delivery_apk/screens/home/sign_up.dart';
 import 'package:food_delivery_apk/utils/colors.dart';
 
 class MainScreenPage extends StatefulWidget {
@@ -16,9 +20,11 @@ class _MainScreenPageState extends State<MainScreenPage> {
   int selectedIndex = 0;
   List pages = [
     HomeScreen(),
-    CartHistory(),
-    RecommendedFoodDetail(),
-    Container(child: Center(child: Text("next page4"),),),
+    // CartHistory(),
+    SignUpPage(),
+    // ShoppingCart(),
+    SignInPage(),
+    ProfileScreen(),
   ];
 
   @override

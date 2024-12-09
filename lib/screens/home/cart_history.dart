@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_apk/screens/Widgets/App_icon.dart';
+import 'package:food_delivery_apk/utils/AppRoutes.dart';
 import 'package:food_delivery_apk/utils/colors.dart';
 
 import '../Widgets/car_history_item.dart';
@@ -27,7 +28,11 @@ class CartHistory extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal:20),
                   child: Text('Cart history', style: Styles.headlineStyle2.copyWith(color: Styles.whiteColor),),
                 ),
-                AppIcon(icon: Icons.shopping_cart)
+                GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, Approutes.shoppingCart);
+                    },
+                    child: AppIcon(icon: Icons.shopping_cart))
               ],
             ),
           ),

@@ -63,6 +63,8 @@ class HomeScreen extends StatelessWidget {
 
           Padding(padding: const EdgeInsets.all(15),
             child: Container(
+              // width: double.maxFinite,
+              width: size.width*0.99,
               height: 700,
               // width: size.width * 0.99,
               child: ListView.builder(
