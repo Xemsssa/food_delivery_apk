@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../models/signup_body_model.dart';
 import '../../utils/colors.dart';
 import '../Widgets/app_text_field.dart';
+import '../components/custom_snack_bar.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +17,7 @@ class SignUpPage extends StatelessWidget {
     var passwordController = TextEditingController();
     var nameController = TextEditingController();
     var phoneController = TextEditingController();
+
     return Scaffold(
       backgroundColor: Styles.whiteColor,
       body: Column(
@@ -36,17 +41,22 @@ class SignUpPage extends StatelessWidget {
           const SizedBox(height: 20,),
           AppTextField(textEditingController: phoneController,hintText: "Phone" ,icon: Icons.phone, color: Styles.yellowColor,),
           const SizedBox(height: 40,),
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-              decoration: BoxDecoration(
-                color: Styles.mainColor,
-                borderRadius: BorderRadius.circular(40)
-              ),
-              child: const Text('Sign Up', style: TextStyle(
-                color: Styles.whiteColor,
-                fontSize: 26
-              ),
-              )
+          GestureDetector(
+            onTap: (){
+              _registration();
+            },
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+                decoration: BoxDecoration(
+                  color: Styles.mainColor,
+                  borderRadius: BorderRadius.circular(40)
+                ),
+                child: const Text('Sign Up', style: TextStyle(
+                  color: Styles.whiteColor,
+                  fontSize: 26
+                ),
+                )
+            ),
           ),
           const SizedBox(height: 10,),
           GestureDetector(
@@ -74,4 +84,31 @@ class SignUpPage extends StatelessWidget {
       ),
     );
   }
+
+  void _registration() {
+      String name = nameController.text.trim();
+      String phone = phoneController.text.trim();
+      String email = emailController.text.trim();
+      String password = passwordController.text.trim();
+
+      if(name.isEmpty) {
+        customSnackBar('Type your name', title: 'Name');
+      }else if(phone.isEmpty){
+        customSnackBar('Type your phone number', title: 'phone number');
+      }else if(email.isEmpty) {
+        customSnackBar('Type your email', title: 'Email');
+      } else if(!GetUtils.isEmail(email)){
+        customSnackBar('Type your valid email', title: 'Email');
+      }else if(password.isEmpty) {
+        customSnackBar('Type your password', title: 'Password');
+      } else if(password.length<6){
+        customSnackBar('Type longer password', title: 'Password');
+      } else {
+        customSnackBar('Perfect, all well done', title: 'Perfect',);
+        SignUpBody signUpBody = SignUpBody(name: name, email: email, phone:phone, password:password);
+        print(signUpBody.toString())
+      }
+  }
+
+
 }

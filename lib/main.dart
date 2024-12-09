@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
         Approutes.recommendedFoodDetailPage: (context) => const RecommendedFoodDetail(),
         Approutes.mainScreenPage: (context) => const MainScreenPage(),
         Approutes.shoppingCart: (context) => const ShoppingCart(),
+        Approutes.singUp: (context) => const SignUpPage()
       },
     );
   }
