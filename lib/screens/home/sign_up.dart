@@ -86,28 +86,28 @@ class SignUpPage extends StatelessWidget {
   }
 
   void _registration() {
-      String name = nameController.text.trim();
-      String phone = phoneController.text.trim();
-      String email = emailController.text.trim();
-      String password = passwordController.text.trim();
-
-      if(name.isEmpty) {
-        customSnackBar('Type your name', title: 'Name');
-      }else if(phone.isEmpty){
-        customSnackBar('Type your phone number', title: 'phone number');
-      }else if(email.isEmpty) {
-        customSnackBar('Type your email', title: 'Email');
-      } else if(!GetUtils.isEmail(email)){
-        customSnackBar('Type your valid email', title: 'Email');
-      }else if(password.isEmpty) {
-        customSnackBar('Type your password', title: 'Password');
-      } else if(password.length<6){
-        customSnackBar('Type longer password', title: 'Password');
-      } else {
-        customSnackBar('Perfect, all well done', title: 'Perfect',);
-        SignUpBody signUpBody = SignUpBody(name: name, email: email, phone:phone, password:password);
-        print(signUpBody.toString())
-      }
+      // String name = nameController.text.trim();
+      // String phone = phoneController.text.trim();
+      // String email = emailController.text.trim();
+      // String password = passwordController.text.trim();
+      //
+      // if(name.isEmpty) {
+      //   customSnackBar('Type your name', title: 'Name');
+      // }else if(phone.isEmpty){
+      //   customSnackBar('Type your phone number', title: 'phone number');
+      // }else if(email.isEmpty) {
+      //   customSnackBar('Type your email', title: 'Email');
+      // } else if(!GetUtils.isEmail(email)){
+      //   customSnackBar('Type your valid email', title: 'Email');
+      // }else if(password.isEmpty) {
+      //   customSnackBar('Type your password', title: 'Password');
+      // } else if(password.length<6){
+      //   customSnackBar('Type longer password', title: 'Password');
+      // } else {
+      //   customSnackBar('Perfect, all well done', title: 'Perfect',);
+      //   SignUpBody signUpBody = SignUpBody(name: name, email: email, phone:phone, password:password);
+      //   print(signUpBody.toString());
+      // }
   }
 
 

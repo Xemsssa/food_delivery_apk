@@ -6,4 +6,5 @@ class Approutes{
   static const mainScreenPage = '/main_screen_page';
   static const shoppingCart = '/shopping_cart';
   static const singUp = '/sign_up';
+  static const addAddress = '/add_address';
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_apk/controllers/popular_product_controller.dart';
 // import 'package:food_delivery_apk/home/home_screen.dart';
 import 'package:food_delivery_apk/screens/bottom_bar.dart';
+import 'package:food_delivery_apk/screens/home/add_address.dart';
 import 'package:food_delivery_apk/screens/home/food_detail_page.dart';
 import 'package:food_delivery_apk/screens/home/home_screen.dart';
 import 'package:food_delivery_apk/screens/home/main_screen_page.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
         Approutes.recommendedFoodDetailPage: (context) => const RecommendedFoodDetail(),
         Approutes.mainScreenPage: (context) => const MainScreenPage(),
         Approutes.shoppingCart: (context) => const ShoppingCart(),
-        Approutes.singUp: (context) => const SignUpPage()
+        Approutes.singUp: (context) => const SignUpPage(),
+        Approutes.addAddress: (context) => const AddAddress()
       },
     );
   }
