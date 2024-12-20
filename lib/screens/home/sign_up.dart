@@ -40,13 +40,13 @@ class SignUpPage extends StatelessWidget {
           AppTextField(textEditingController: nameController,hintText: "Name" ,icon: Icons.person, color: Styles.yellowColor,),
           const SizedBox(height: 20,),
           AppTextField(textEditingController: phoneController,hintText: "Phone" ,icon: Icons.phone, color: Styles.yellowColor,),
-          const SizedBox(height: 40,),
+          const SizedBox(height: 30,),
           GestureDetector(
             onTap: (){
               _registration();
             },
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: const EdgeInsets.symmetric(vertical:15,horizontal: 40),
                 decoration: BoxDecoration(
                   color: Styles.mainColor,
                   borderRadius: BorderRadius.circular(40)
@@ -69,13 +69,13 @@ class SignUpPage extends StatelessWidget {
             ),),
           ),
           const SizedBox(height: 30,),
-          const Text('Sign up using one of the folllowing methods', style: TextStyle(
+          const Text('Sign up using one of the following methods', style: TextStyle(
             color: Styles.textColor
           ),),
           Wrap(
-            children: List.generate(3, (generator) => Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: const CircleAvatar(
+            children: List.generate(3, (generator) => const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: CircleAvatar(
                 backgroundImage: AssetImage('assets/images/images.png'),
               ),
             )),

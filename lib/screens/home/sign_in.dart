@@ -4,6 +4,7 @@ import 'package:food_delivery_apk/utils/AppRoutes.dart';
 
 import '../../utils/colors.dart';
 import '../Widgets/app_text_field.dart';
+import '../Widgets/save_button.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -74,18 +75,7 @@ class SignInPage extends StatelessWidget {
                 ),
           ),
 
-          Container(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-              decoration: BoxDecoration(
-                  color: Styles.mainColor,
-                  borderRadius: BorderRadius.circular(40)
-              ),
-              child: const Text('Sign in', style: TextStyle(
-                  color: Styles.whiteColor,
-                  fontSize: 26
-              ),
-              )
-          ),
+          SaveButton(text: "Sign in"),
 
           const SizedBox(height: 40,),
 

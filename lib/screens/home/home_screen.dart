@@ -64,7 +64,8 @@ class HomeScreen extends StatelessWidget {
           Padding(padding: const EdgeInsets.all(15),
             child: Container(
               // width: double.maxFinite,
-              width: size.width*0.99,
+              // width: size.width*0.99
+              width: double.maxFinite,
               height: 700,
               // width: size.width * 0.99,
               child: ListView.builder(
@@ -79,8 +80,8 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            height: 150,
-                            width: 150,
+                            height: 100,
+                            width: 100,
                             // child: Text('data'),
                             decoration: BoxDecoration(
                               color: Styles.yellowColor,
@@ -91,7 +92,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            width: size.width * 0.57,
+                            // width: size.width * 0.75,
                             padding: const EdgeInsets.all(8),
                             decoration: const BoxDecoration(
                                 color: Styles.whiteColor,

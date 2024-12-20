@@ -88,7 +88,7 @@ class _PageBodyState extends State<PageBody> {
                 margin: const EdgeInsets.only(bottom: 0),
                 height: 130,
                 width: size.width * 0.75,
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Styles.whiteColor,
